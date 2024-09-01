@@ -34,6 +34,9 @@ header {
   line-height: 1.5;
   position: sticky;
   top: 10px;
+  justify-content: space-around;
+  align-items: start;
+  display: flex;
 
   margin-bottom: 2em;
 
