@@ -2,18 +2,39 @@
 import Header from "./components/Header.vue";
 import SectionLead from "./components/SectionLead.vue";
 import CharSection from "./components/CharSection.vue";
+
+import gsap from "gsap";
+
+import { onMounted } from "vue";
+
+onMounted(() => {
+  window.addEventListener("mousemove", (e) => {
+    const isTargetLinkOrBtn = e.target.closest('img');
+    const isP = e.target.closest("p");
+    gsap.to(".cursor-follower", {
+      x: e.clientX,
+      y: e.clientY,
+      duration: 0.2,
+      width: `${isP ? "5px" : "20px"}`,
+      height: `${isP ? "30px" : "20px"}`,
+      borderRadius: `${isP ? "0" : "100%"}`,
+      transform: `scale(${isTargetLinkOrBtn ? 3 : 1})`
+    })
+  })
+})
 </script>
 
 <template>
   <header>
     <Header />
   </header>
-
+  <div class="cursor-follower"></div>
   <section id="lead">
     <SectionLead />
   </section>
   <section id="iron">
     <CharSection
+      heroId="iron"
       photo="iron-man.png"
       width="40%"
       name="Iron Man"
@@ -22,10 +43,11 @@ import CharSection from "./components/CharSection.vue";
       alias="None"
       origin="Long Island, New York"
       quote="Genius, Billionaire, Philanthropist"
-      />
+    />
   </section>
   <section id="america">
     <CharSection
+      heroId="america"
       photo="captain-hero.png"
       width="40%"
       name="Captain America"
@@ -34,10 +56,11 @@ import CharSection from "./components/CharSection.vue";
       origin="Brooklyn"
       alias="Cap"
       quote="I don't like bullies; I don't care where they're from"
-      />
+    />
   </section>
   <section id="thor">
     <CharSection
+      heroId="thor"
       photo="thor-hero.png"
       width="50%"
       name="Thor"
@@ -50,6 +73,7 @@ import CharSection from "./components/CharSection.vue";
   </section>
   <section id="strange">
     <CharSection
+      heroId="strange"
       photo="strange-hero.png"
       width="40%"
       name="Doctor Strange"
@@ -62,6 +86,7 @@ import CharSection from "./components/CharSection.vue";
   </section>
   <section id="hulk">
     <CharSection
+      heroId="hulk"
       photo="hulk-hero.png"
       name="Hulk"
       width="45%"
@@ -74,6 +99,7 @@ import CharSection from "./components/CharSection.vue";
   </section>
   <section id="spider">
     <CharSection
+      heroId="spider"
       photo="spiderman-hero.png"
       width="55%"
       margin="-5em"
@@ -87,6 +113,7 @@ import CharSection from "./components/CharSection.vue";
   </section>
   <section id="deadpool">
     <CharSection
+      heroId="deadpool"
       photo="deadpool-hero.png"
       width="45%"
       margin="0em"

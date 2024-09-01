@@ -1,7 +1,9 @@
-@import './base.css';
+@import "./base.css";
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  cursor: none;
   /* scroll-snap-type: y mandatory; */
 }
 
@@ -9,7 +11,23 @@ html {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+.cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: rgba(172, 172, 172, 0.7);
+  opacity: 1;
+  z-index: 10000;
+  user-select: none;
+  pointer-events: none;
   font-weight: normal;
+
+  /* transition: trans ease-in-out 0.2s, height ease-in-out 0.2s; */
 }
 
 a,

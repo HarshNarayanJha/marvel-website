@@ -1,5 +1,9 @@
 <script setup>
-defineProps({
+const props = defineProps({
+  heroId: {
+    type: String,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
@@ -39,6 +43,35 @@ defineProps({
     default: "0px",
   },
 });
+
+import { gsap } from "gsap";
+import { ref, onMounted, onUnmounted } from 'vue';
+
+onMounted(() => {
+  const image = document.querySelector(`.img-lead-${props.heroId}`);
+  const text = document.querySelector(`.about-${props.heroId}`);
+
+  gsap.from(image, {
+    x: 500,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: `.img-lead-${props.heroId}`,
+      start: "top 50%",
+      end: "bottom 80%",
+      scrub: true
+    }
+  });
+
+  gsap.from(text, {
+    opacity: 0,
+    scrollTrigger: {
+      trigger: `.about-${props.heroId}`,
+      start: "top 80%",
+      end: "bottom 80%",
+      scrub: true
+    }
+  });
+})
 </script>
 
 <template>
@@ -53,9 +86,9 @@ defineProps({
         </ul>
         <i>{{ quote }}</i>
       </div>
-      <img :src="photo" :alt="`picture of ${name}`" />
+      <img :class="`img-lead-${heroId}`" :src="photo" :alt="`picture of ${name}`" />
     </div>
-    <p>{{ about }}</p>
+    <p :class="`about-${heroId}`">{{ about }}</p>
   </div>
 </template>
 

@@ -1,24 +1,31 @@
-<script setup></script>
+<script setup>
+import { ref, onMounted, onUnmounted } from "vue";
+import { gsap } from "gsap";
+
+onMounted(() => {
+  const image = document.querySelector("img#logo");
+  gsap.from(image, {
+    y: -500,
+    duration: 0.4,
+    delay: 0.5,
+    ease: "in",
+  });
+});
+</script>
 
 <template>
   <div>
-    <img src="/marvel.png" />
+    <img id="logo" src="/marvel.png" />
     <p>Welcome to the Universe</p>
   </div>
   <p>
-    The Marvel universe is a vast and wondrous place, full of iconic characters, epic battles, and unforgettable
-    storylines.
-    From the humble beginnings of Stan Lee's first comic book creations to the modern-day blockbusters that dominate the
-    box
-    office, Marvel has consistently pushed the boundaries of what's possible in the world of superheroes. With a diverse
-    cast
+    The Marvel universe is a vast and wondrous place, full of iconic characters, epic battles, and unforgettable storylines.
+    From the humble beginnings of Stan Lee's first comic book creations to the modern-day blockbusters that dominate the box
+    office, Marvel has consistently pushed the boundaries of what's possible in the world of superheroes. With a diverse cast
     of characters that includes the likes of Iron Man, Captain America, Black Widow, and the Hulk, there's something for
-    everyone in the Marvel universe. Whether you're a lifelong fan or just discovering the magic of Marvel, the
-    intricate web
-    of interconnected stories and characters is sure to captivate and inspire. With new movies, TV shows, and comic
-    books
-    being released all the time, the Marvel universe is constantly evolving and expanding, offering endless
-    opportunities for
+    everyone in the Marvel universe. Whether you're a lifelong fan or just discovering the magic of Marvel, the intricate web
+    of interconnected stories and characters is sure to captivate and inspire. With new movies, TV shows, and comic books
+    being released all the time, the Marvel universe is constantly evolving and expanding, offering endless opportunities for
     fans to engage with their favorite characters and storylines.
   </p>
 </template>
