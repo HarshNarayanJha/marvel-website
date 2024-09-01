@@ -1,6 +1,5 @@
 # Marvel Website
-
-Marvel themed website for DevQuest submission
+Marvel themed website made with Vue for Dev Quest submission, [visit here](https://HarshNarayanJha.github.io/marvel-website/edit/main/README.md)
 
 ## Project Setup
 
