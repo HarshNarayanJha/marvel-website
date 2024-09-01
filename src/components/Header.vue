@@ -3,25 +3,24 @@
 <template>
   <nav>
     <a href="#"><span class="first">Marvel</span></a>
-    <a href="#features"><span class="">Features</span></a>
-    <a href="#usage"><span class="">Usage</span></a>
-    <a href="#privacy"><span class="">Privacy</span></a>
-    <a href="#about"><span>About</span></a>
+    <a href="#iron"><span class="">Iron Man</span></a>
+    <a href="#america"><span class="">Captain America</span></a>
+    <a href="#thor"><span class="">Thor</span></a>
+    <a href="#strange"><span>Doctor Strange</span></a>
+    <a href="#hulk"><span>Hulk</span></a>
+    <a href="#spider"><span>Spider-Man</span></a>
+    <a href="#deadpool"><span>Deadpool</span></a>
   </nav>
 </template>
 
 <style scoped>
-img.icon {
-  max-width: 30px;
-  margin-top: 7px;
-}
 
 nav {
   width: fit-content;
   height: max-content;
 
   background-color: var(--color-border);
-  /* border: 0.2px solid var(--color-border-hover); */
+  border: 0.2px solid var(--color-border-hover);
 
   border-radius: 40px;
   padding: 4px;
@@ -34,8 +33,8 @@ nav {
     width: fit-content;
     height: max-content;
 
-    margin: 0 5px;
-    padding: 5px 20px;
+    margin: 0 1px;
+    padding: 5px 15px;
     border-radius: 40px;
 
     color: var(--color-text);
@@ -44,9 +43,9 @@ nav {
   }
 
   span.first {
-    background-color: var(--c-green-dark);
+    background-color: var(--c-red-dark);
     font-weight: 900;
-    font-family: "Baloo 2";
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #fff;
   }
 
