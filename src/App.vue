@@ -1,5 +1,6 @@
 <script setup>
 import Header from "./components/Header.vue";
+import SectionLead from "./components/SectionLead.vue";
 import CharSection from "./components/CharSection.vue";
 </script>
 
@@ -8,6 +9,9 @@ import CharSection from "./components/CharSection.vue";
     <Header />
   </header>
 
+  <section id="lead">
+    <SectionLead />
+  </section>
   <section>
     <CharSection name="Iron Man" about="..." />
   </section>
@@ -39,14 +43,23 @@ header {
   background: red;
 }
 
+section#lead {
+  min-height: 80svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 section {
   min-height: 100svh;
-  min-width: 100svw;
-  display: flex;
+  margin: 80px 0;
+
   scroll-behavior: smooth;
 
   scroll-snap-align: start;
-  scroll-margin-top: 150px;
+  scroll-margin-top: 75px;
+
+  border: 1px solid green;
 }
 
 @media (min-width: 1024px) {

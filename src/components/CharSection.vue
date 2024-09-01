@@ -21,11 +21,9 @@ defineProps({
 <style scoped>
 
 div {
-  margin: 6em 2em;
+  margin: 3em 2em;
   padding: 1em 2em;
 
-  display: flex;
-  place-content: center;
 
   border: 1px solid red;
 }

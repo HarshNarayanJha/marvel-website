@@ -1,7 +1,7 @@
 @import './base.css';
 
 html {
-  scroll-snap-type: y;
+  scroll-snap-type: y mandatory;
 }
 
 #app {
