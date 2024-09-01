@@ -1,15 +1,41 @@
-<script setup></script>
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const activeSection = ref('');
+
+const updateActiveSection = () => {
+  const sections = document.querySelectorAll('section');
+  const scrollPosition = window.scrollY;
+
+  for (let i = sections.length - 1; i >= 0; i--) {
+    const section = sections[i];
+    if (scrollPosition >= section.offsetTop - 100) {
+      activeSection.value = section.id || '';
+      break;
+    }
+  }
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', updateActiveSection);
+  updateActiveSection();
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', updateActiveSection);
+});
+</script>
 
 <template>
   <nav>
-    <a href="#"><span class="first">Marvel</span></a>
-    <a href="#iron"><span class="">Iron Man</span></a>
-    <a href="#america"><span class="">Captain America</span></a>
-    <a href="#thor"><span class="">Thor</span></a>
-    <a href="#strange"><span>Doctor Strange</span></a>
-    <a href="#hulk"><span>Hulk</span></a>
-    <a href="#spider"><span>Spider-Man</span></a>
-    <a href="#deadpool"><span>Deadpool</span></a>
+    <a href="#"><span :class="{ active: activeSection === 'lead' }">Marvel</span></a>
+    <a href="#iron"><span :class="{ active: activeSection === 'iron' }">Iron Man</span></a>
+    <a href="#america"><span :class="{ active: activeSection === 'america' }">Captain America</span></a>
+    <a href="#thor"><span :class="{ active: activeSection === 'thor' }">Thor</span></a>
+    <a href="#strange"><span :class="{ active: activeSection === 'strange' }">Doctor Strange</span></a>
+    <a href="#hulk"><span :class="{ active: activeSection === 'hulk' }">Hulk</span></a>
+    <a href="#spider"><span :class="{ active: activeSection === 'spider' }">Spider-Man</span></a>
+    <a href="#deadpool"><span :class="{ active: activeSection === 'deadpool' }">Deadpool</span></a>
   </nav>
 </template>
 
@@ -50,17 +76,12 @@ nav {
     transition: all 0.5s ease-in-out;
   }
 
-  span.first {
+  span.active {
     background-color: var(--c-red-dark);
-    font-weight: 900;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #fff;
   }
 
-  span.active:not(.first) {
-    background-color: var(--color-border-hover);
-    color: #fff;
-  }
 
   @media (max-width: 520px) {
     span {

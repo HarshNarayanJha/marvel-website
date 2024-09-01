@@ -95,7 +95,7 @@ section {
   scroll-behavior: smooth;
 
   scroll-snap-align: start;
-  scroll-margin-top: 75px;
+  scroll-margin-top: 100px;
 
   /* border: 1px solid green; */
 }
