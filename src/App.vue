@@ -32,22 +32,19 @@ import CharSection from "./components/CharSection.vue";
 <style scoped>
 header {
   line-height: 1.5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: sticky;
   top: 10px;
 
   margin-bottom: 2em;
 
-  background: red;
+  /* background: red; */
 }
 
 section#lead {
   min-height: 80svh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
 }
 
 section {
@@ -59,7 +56,7 @@ section {
   scroll-snap-align: start;
   scroll-margin-top: 75px;
 
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 
 @media (min-width: 1024px) {

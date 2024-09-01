@@ -20,7 +20,7 @@ nav {
   height: max-content;
 
   background-color: var(--color-border);
-  border: 0.2px solid var(--color-border-hover);
+  /* border: 0.2px solid var(--color-border-hover); */
 
   border-radius: 40px;
   padding: 4px;
