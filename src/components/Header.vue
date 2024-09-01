@@ -20,10 +20,18 @@ nav {
   height: max-content;
 
   background-color: var(--color-border);
+  margin: 0 auto;
   /* border: 0.2px solid var(--color-border-hover); */
 
   border-radius: 40px;
   padding: 4px;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+
+  /* display: flex;
+  flex-direction: right; */
+  
 
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -62,15 +70,15 @@ nav {
   }
 }
 
-.links {
-  max-width: 30px;
-  margin-top: 12px;
-}
+
 
 @media (max-width: 500px) {
   nav {
     font-size: 0.8rem;
     padding: 4px;
+    
+    width: 100%;
+    overflow-x: auto;
 
     span {
       padding: 2px 8px;

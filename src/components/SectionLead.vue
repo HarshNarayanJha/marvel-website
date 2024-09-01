@@ -2,17 +2,23 @@
 
 <template>
   <div>
-    <h1>Marvel</h1>
+    <img src="/marvel.png" />
     <p>Welcome to the Universe</p>
   </div>
   <p>
-    The Marvel universe is a vast and wondrous place, full of iconic characters, epic battles, and unforgettable storylines.
-    From the humble beginnings of Stan Lee's first comic book creations to the modern-day blockbusters that dominate the box
-    office, Marvel has consistently pushed the boundaries of what's possible in the world of superheroes. With a diverse cast
+    The Marvel universe is a vast and wondrous place, full of iconic characters, epic battles, and unforgettable
+    storylines.
+    From the humble beginnings of Stan Lee's first comic book creations to the modern-day blockbusters that dominate the
+    box
+    office, Marvel has consistently pushed the boundaries of what's possible in the world of superheroes. With a diverse
+    cast
     of characters that includes the likes of Iron Man, Captain America, Black Widow, and the Hulk, there's something for
-    everyone in the Marvel universe. Whether you're a lifelong fan or just discovering the magic of Marvel, the intricate web
-    of interconnected stories and characters is sure to captivate and inspire. With new movies, TV shows, and comic books
-    being released all the time, the Marvel universe is constantly evolving and expanding, offering endless opportunities for
+    everyone in the Marvel universe. Whether you're a lifelong fan or just discovering the magic of Marvel, the
+    intricate web
+    of interconnected stories and characters is sure to captivate and inspire. With new movies, TV shows, and comic
+    books
+    being released all the time, the Marvel universe is constantly evolving and expanding, offering endless
+    opportunities for
     fans to engage with their favorite characters and storylines.
   </p>
 </template>
@@ -27,6 +33,10 @@ div {
   align-items: center;
 
   /* border: 1px solid blue; */
+
+  img {
+    max-width: 45%;
+  }
 
   h1 {
     font-size: 7rem;
