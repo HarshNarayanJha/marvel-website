@@ -8,6 +8,22 @@ defineProps({
     type: String,
     required: true,
   },
+  realName: {
+    type: String,
+    required: true,
+  },
+  alias: {
+    type: String,
+    required: true,
+  },
+  quote: {
+    type: String,
+    required: true,
+  },
+  origin: {
+    type: String,
+    required: true,
+  },
   photo: {
     type: String,
     required: true,
@@ -15,13 +31,13 @@ defineProps({
   width: {
     type: String,
     required: false,
-    default: "30%"
+    default: "30%",
   },
   margin: {
     type: String,
     required: false,
-    default: "0px"
-  }
+    default: "0px",
+  },
 });
 </script>
 
@@ -30,10 +46,12 @@ defineProps({
     <div class="heading">
       <div class="stats">
         <h1>{{ name }}</h1>
+        <small>{{ realName }}</small>
         <ul>
-          <li>Height:</li>
-          <li>Weight:</li>
+          <li>Alias: {{ alias }}</li>
+          <li>Origin: {{ origin }}</li>
         </ul>
+        <i>{{ quote }}</i>
       </div>
       <img :src="photo" :alt="`picture of ${name}`" />
     </div>
@@ -59,29 +77,41 @@ div {
     div.stats {
       h1 {
         font-size: 3rem;
+        line-height: 4rem;
         font-weight: 600;
         color: var(--color-text-bright);
+      }
+
+      small {
+        font-size: 1rem;
+        margin-bottom: 2.5em;
+        color: var(--c-text);
       }
 
       ul {
         width: 100%;
         padding: 0 2em;
+        color: var(--color-text-bright);
         /* border: 1px solid green; */
       }
-    }
-  }
 
-  img {
-    max-width: v-bind(width);
-    align-self: end;
-    margin-right: v-bind(margin);
+      i {
+        margin-top: 1em;
+      }
+    }
+
+    img {
+      max-width: v-bind(width);
+      align-self: end;
+      margin-right: v-bind(margin);
+    }
+    /* border: 1px solid red; */
   }
 
   p {
     font-size: 1.2rem;
     text-align: justify;
+    color: var(--color-text-bright);
   }
-
-  /* border: 1px solid red; */
 }
 </style>
