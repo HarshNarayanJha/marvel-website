@@ -57,10 +57,14 @@ nav {
 
   /* display: flex;
   flex-direction: right; */
-  
+
 
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+
+  a:first-child span {
+    font-weight: 800;
+  }
 
   span {
     display: inline-block;
@@ -78,7 +82,6 @@ nav {
 
   span.active {
     background-color: var(--c-red-dark);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #fff;
   }
 
@@ -97,7 +100,7 @@ nav {
   nav {
     font-size: 0.8rem;
     padding: 4px;
-    
+
     width: 100%;
     overflow-x: auto;
 

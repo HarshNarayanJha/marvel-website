@@ -12,6 +12,16 @@ defineProps({
     type: String,
     required: true,
   },
+  width: {
+    type: String,
+    required: false,
+    default: "30%"
+  },
+  margin: {
+    type: String,
+    required: false,
+    default: "0px"
+  }
 });
 </script>
 
@@ -62,8 +72,9 @@ div {
   }
 
   img {
-    max-width: 30%;
+    max-width: v-bind(width);
     align-self: end;
+    margin-right: v-bind(margin);
   }
 
   p {
