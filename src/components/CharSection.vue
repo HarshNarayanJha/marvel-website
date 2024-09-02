@@ -42,10 +42,20 @@ const props = defineProps({
     required: false,
     default: "0px",
   },
+  color: {
+    type: String,
+    required: false,
+    default: "black",
+  },
+  hoverColor: {
+    type: String,
+    required: false,
+    default: "black",
+  },
 });
 
 import { gsap } from "gsap";
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted } from "vue";
 
 onMounted(() => {
   const image = document.querySelector(`.img-lead-${props.heroId}`);
@@ -58,8 +68,8 @@ onMounted(() => {
       trigger: `.img-lead-${props.heroId}`,
       start: "top 50%",
       end: "bottom 80%",
-      scrub: true
-    }
+      scrub: true,
+    },
   });
 
   gsap.from(text, {
@@ -68,17 +78,28 @@ onMounted(() => {
       trigger: `.about-${props.heroId}`,
       start: "top 80%",
       end: "bottom 80%",
-      scrub: true
-    }
+      scrub: true,
+    },
   });
-})
+
+  gsap.from(`#name-${props.heroId}`, {
+    scaleX: 0,
+    ease: "back",
+    scrollTrigger: {
+      trigger: `#name-${props.heroId}`,
+      start: "top 80%",
+      end: "bottom 80%",
+      scrub: true,
+    },
+  });
+});
 </script>
 
 <template>
   <div>
     <div class="heading">
       <div class="stats">
-        <h1>{{ name }}</h1>
+        <h1 :id="`name-${heroId}`">{{ name }}</h1>
         <small>{{ realName }}</small>
         <ul>
           <li>Alias: {{ alias }}</li>
@@ -86,7 +107,7 @@ onMounted(() => {
         </ul>
         <i>{{ quote }}</i>
       </div>
-      <img :class="`img-lead-${heroId}`" :src="photo" :alt="`picture of ${name}`" />
+      <img :class="`img-lead-${heroId}`" :src="photo" :alt="`picture of ${name}`" draggable="false" />
     </div>
     <p :class="`about-${heroId}`">{{ about }}</p>
   </div>
@@ -106,11 +127,12 @@ div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
 
     div.stats {
       h1 {
-        font-size: 3rem;
-        line-height: 4rem;
+        font-size: 4.5rem;
+        line-height: 6rem;
         font-weight: 600;
         color: var(--color-text-bright);
       }
@@ -134,11 +156,18 @@ div {
     }
 
     img {
+      --shadow-color: v-bind(color);
+      --shadow-color-hover: v-bind(hoverColor);
       max-width: v-bind(width);
       align-self: end;
       margin-right: v-bind(margin);
+      filter: drop-shadow(0rem 0rem 0.8rem var(--shadow-color));
+      transition: filter ease-in-out 0.2s;
     }
-    /* border: 1px solid red; */
+
+    img:hover {
+      filter: drop-shadow(0rem 0rem 0.8rem var(--shadow-color-hover));
+    }
   }
 
   p {

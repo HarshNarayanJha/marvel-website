@@ -9,7 +9,7 @@ import { onMounted } from "vue";
 
 onMounted(() => {
   window.addEventListener("mousemove", (e) => {
-    const isTargetLinkOrBtn = e.target.closest('img');
+    const isTargetLinkOrHd = e.target.closest('img') || e.target.closest("h1");
     const isP = e.target.closest("p");
     gsap.to(".cursor-follower", {
       x: e.clientX,
@@ -18,7 +18,7 @@ onMounted(() => {
       width: `${isP ? "5px" : "20px"}`,
       height: `${isP ? "30px" : "20px"}`,
       borderRadius: `${isP ? "0" : "100%"}`,
-      transform: `scale(${isTargetLinkOrBtn ? 3 : 1})`
+      transform: `scale(${isTargetLinkOrHd ? 3 : 1})`
     })
   })
 })
@@ -43,6 +43,7 @@ onMounted(() => {
       alias="None"
       origin="Long Island, New York"
       quote="Genius, Billionaire, Philanthropist"
+      hoverColor="red"
     />
   </section>
   <section id="america">
@@ -56,6 +57,7 @@ onMounted(() => {
       origin="Brooklyn"
       alias="Cap"
       quote="I don't like bullies; I don't care where they're from"
+      hoverColor="skyblue"
     />
   </section>
   <section id="thor">
@@ -69,6 +71,7 @@ onMounted(() => {
       origin="Asgard"
       quote="You People Are So Petty. And Tiny."
       alias="None"
+      hoverColor="grey"
     />
   </section>
   <section id="strange">
@@ -82,6 +85,7 @@ onMounted(() => {
       origin="Philadelphia, Pennsylvania"
       alias="Sorcerer Supreme, Master of the Mystic Arts"
       quote="If I tell you what happens, it won't happen."
+      hoverColor="darkred"
     />
   </section>
   <section id="hulk">
@@ -95,6 +99,7 @@ onMounted(() => {
       origin="Dayton, Ohio"
       alias="Green One"
       quote="No Banner, Only Hulk!"
+      hoverColor="lightgreen"
     />
   </section>
   <section id="spider">
@@ -109,6 +114,8 @@ onMounted(() => {
       origin="Queens, New York"
       alias="Night Monkey, Peter-One"
       quote="With great power, comes great responsibility"
+      color="red"
+      hoverColor="skyblue"
     />
   </section>
   <section id="deadpool">
@@ -122,6 +129,7 @@ onMounted(() => {
       about="Deadpool, aka Wade Wilson, is a former special forces operative turned mercenary who gained accelerated healing abilities after being subjected to an experimental regenerative mutation. With his newfound powers, he uses his dark humor, breaking-the-fourth-wall antics, and tendency to disregard conventional morality to fight against evil, often in his own unorthodox and violent way. Despite his rough exterior, Deadpool has a soft spot for those in need and has become a fan favorite for his irreverent and unconventional approach to superheroism."
       origin="Unrevealed location in Canada"
       alias="Merc with a Mouth"
+      hoverColor="darkred"
     />
   </section>
 </template>
@@ -154,8 +162,6 @@ section#lead {
 section {
   min-height: 100svh;
   margin: 80px 0;
-
-  scroll-behavior: smooth;
 
   scroll-snap-align: start;
   scroll-margin-top: 100px;

@@ -4,7 +4,7 @@ html {
   scroll-behavior: smooth;
   overflow-x: clip;
   cursor: none;
-  /* scroll-snap-type: y mandatory; */
+  scroll-snap-type: y proximity;
 }
 
 #app {
@@ -36,6 +36,7 @@ a,
   color: hsla(160, 100%, 37%, 1);
   transition: 0.4s;
   padding: 3px;
+  cursor: none;
 }
 
 @media (min-width: 1024px) {

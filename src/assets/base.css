@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   --c-white: #ffffff;
@@ -8,8 +11,8 @@
   --c-black-soft: #222222;
   --c-black-mute: #282828;
 
-  --c-red: #FF1D24;
-  --c-red-dark: #FF1D24;
+  --c-red: #ff1d24;
+  --c-red-dark: #ff1d24;
 
   --c-divider-light-1: rgba(60, 60, 60, 0.29);
   --c-divider-light-2: rgba(60, 60, 60, 0.12);
@@ -56,11 +59,6 @@
   }
 }
 
-@font-face {
-    font-family: 'Marvel';
-    src: url('Marvel.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
-}
-
 *,
 *::before,
 *::after {
@@ -82,17 +80,52 @@ body {
     Inter,
     -apple-system,
     BlinkMacSystemFont,
-    'Segoe UI',
+    "Segoe UI",
     Roboto,
     Oxygen,
     Ubuntu,
     Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
     sans-serif;
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  font-family:
+    "Commissioner",
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "FLAR" 0,
+    "VOLM" 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bangers", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
