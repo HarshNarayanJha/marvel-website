@@ -11,6 +11,10 @@ html {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  /* background-image: url("/background-blob.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: 50% 50%; */
 }
 
 .cursor-follower {

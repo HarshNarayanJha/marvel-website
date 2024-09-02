@@ -57,7 +57,7 @@ div {
 
   img {
     max-width: 45%;
-    mix-blend-mode: color-burn;
+    /* mix-blend-mode: color-burn; */
   }
 
   h1 {
