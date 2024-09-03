@@ -29,7 +29,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <img rel="preload" priority="high" id="logo" src="/marvel.png" />
+    <img rel="preload" priority="high" id="logo" src="/marvel.png" draggable="false" />
     <p id="welcome">Welcome to the Universe</p>
   </div>
   <p id="lead-body">

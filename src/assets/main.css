@@ -7,6 +7,38 @@ html {
   scroll-snap-type: y proximity;
 }
 
+@media (max-width: 800px) {
+  html {
+    scroll-snap-type: none;
+  }
+}
+
+body {
+  /* background-size: 100% 100%; */
+  /* background-position:
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px; */
+  background-image: repeating-linear-gradient(315deg, #ee00002e 92%, #073aff00 100%),
+    repeating-radial-gradient(75% 75% at 238% 218%, #00000012 30%, #073aff14 39%),
+    radial-gradient(99% 99% at 109% 2%, #a6ff00aa 0%, #073aff00 100%),
+    radial-gradient(99% 99% at 21% 78%, #6f2f00aa 0%, #073aff00 100%),
+    radial-gradient(160% 154% at 711px -303px, #000000ff 0%, #3907ffff 100%);
+  /* backdrop-filter: blur(10px); */
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-image: repeating-linear-gradient(315deg, #ee66004d 92%, #ffffff00 100%),
+      repeating-radial-gradient(75% 75% at 238% 218%, #ffffff1a 30%, #ffa07a2e 39%),
+      radial-gradient(99% 99% at 109% 2%, #ffffccaa 0%, #ffffff00 100%),
+      radial-gradient(99% 99% at 21% 78%, #ffc080aa 0%, #ffffff00 100%),
+      radial-gradient(160% 154% at 711px -303px, #ffffff00 0%, #ffa07aff 100%);
+  }
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
@@ -37,9 +69,9 @@ html {
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  /* color: hsla(160, 100%, 37%, 1); */
   transition: 0.4s;
-  padding: 3px;
+  /* padding: 3px; */
   cursor: none;
 }
 

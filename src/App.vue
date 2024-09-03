@@ -9,7 +9,7 @@ import { onMounted } from "vue";
 
 onMounted(() => {
   window.addEventListener("mousemove", (e) => {
-    const isTargetLinkOrHd = e.target.closest('img') || e.target.closest("h1");
+    const isTargetLinkOrHd = e.target.closest("img") || e.target.closest("h1");
     const isP = e.target.closest("p");
     gsap.to(".cursor-follower", {
       x: e.clientX,
@@ -18,10 +18,10 @@ onMounted(() => {
       width: `${isP ? "5px" : "20px"}`,
       height: `${isP ? "30px" : "20px"}`,
       borderRadius: `${isP ? "0" : "100%"}`,
-      transform: `scale(${isTargetLinkOrHd ? 3 : 1})`
-    })
-  })
-})
+      transform: `scale(${isTargetLinkOrHd ? 3 : 1})`,
+    });
+  });
+});
 </script>
 
 <template>
@@ -93,7 +93,7 @@ onMounted(() => {
       heroId="hulk"
       photo="hulk-hero.png"
       name="Hulk"
-      width="45%"
+      width="35%"
       about="The Hulk, aka Bruce Banner, is a brilliant scientist who, due to exposure to gamma radiation, transforms into a giant, green-skinned monster with incredible strength and durability whenever he becomes angry or experiences strong emotions. As the Hulk, he has clashed with the military, other superheroes, and even himself, as he struggles to maintain control over his alter ego. Despite his destructive tendencies, the Hulk has also been a valuable member of the Avengers, using his incredible powers to protect the world from threats too great for mortal men."
       realName="Robert Bruce Banner"
       origin="Dayton, Ohio"
@@ -106,7 +106,7 @@ onMounted(() => {
     <CharSection
       heroId="spider"
       photo="spiderman-hero.png"
-      width="55%"
+      width="45%"
       margin="-5em"
       name="Spider-Man"
       about="Spider-Man, aka Peter Parker, is a teenage nerd-turned-superhero who gained incredible powers after being bitten by a radioactive spider. With his powers, he fights crime and battles supervillains in New York City, all while balancing his personal life and keeping his secret identity hidden from the world. With his quick wit, agility, and web-slinging abilities, Spider-Man has become a beloved and iconic superhero, known for his catchphrase 'With great power comes great responsibility.'"
@@ -138,16 +138,20 @@ onMounted(() => {
 header {
   line-height: 1.5;
   position: sticky;
-  top: 10px;
+  z-index: 100;
+  top: 18px;
 
   margin-bottom: 2em;
 
-  /* background: green; */
+  display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
+}
 
-  /* background: red; */
+@media (max-width: 800px) {
+  header {
+    display: none;
+  }
 }
 
 section#lead {
@@ -155,8 +159,6 @@ section#lead {
   display: flex;
   flex-direction: column;
   justify-content: start;
-
-  /* background: ; */
 }
 
 section {
@@ -165,15 +167,12 @@ section {
 
   scroll-snap-align: start;
   scroll-margin-top: 100px;
-
-  /* border: 1px solid green; */
 }
 
 @media (min-width: 1024px) {
   header {
     display: flex;
     place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
   }
 
   header .wrapper {

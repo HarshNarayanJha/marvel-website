@@ -76,9 +76,10 @@ onMounted(() => {
     opacity: 0,
     scrollTrigger: {
       trigger: `.about-${props.heroId}`,
-      start: "top 80%",
-      end: "bottom 80%",
+      start: "top 90%",
+      end: "bottom 100%",
       scrub: true,
+      markers: false
     },
   });
 
@@ -135,10 +136,11 @@ div {
         line-height: 6rem;
         font-weight: 600;
         color: var(--color-text-bright);
+        z-index: 500;
       }
 
       small {
-        font-size: 1rem;
+        font-size: 1.2rem;
         margin-bottom: 2.5em;
         color: var(--c-text);
       }
@@ -147,11 +149,13 @@ div {
         width: 100%;
         padding: 0 2em;
         color: var(--color-text-bright);
-        /* border: 1px solid green; */
+        font-size: 1.1rem;
+        list-style-type: square;
       }
 
       i {
         margin-top: 1em;
+        font-size: 1.2rem;
       }
     }
 
@@ -163,6 +167,7 @@ div {
       margin-right: v-bind(margin);
       filter: drop-shadow(0rem 0rem 0.8rem var(--shadow-color));
       transition: filter ease-in-out 0.2s;
+      z-index: 500;
     }
 
     img:hover {
